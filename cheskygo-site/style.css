@@ -1,5 +1,5 @@
 /* ===========================================================
-   cheskygo.com â€” design system  (v4: ink / letterpress)
+   cheskygo.com — design system  (v4: ink / letterpress)
    Edit THIS file to change the look. The pipeline never touches it.
    One sheet for both pages: light cream, warm grain, dark petrol +
    warm blush as a two-color accent system.
@@ -32,7 +32,7 @@ html{-webkit-text-size-adjust:100%}
 body{min-height:100vh;overflow-x:hidden;background:var(--paper);color:var(--ink)}
 a{text-decoration:none;color:inherit}
 
-/* paper grain â€” soft, static, warm */
+/* paper grain — soft, static, warm */
 body::before{
   content:"";position:fixed;inset:-60px;z-index:40;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='200'%20height='200'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.8'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='200'%20height='200'%20filter='url(%23n)'%20opacity='0.6'/%3E%3C/svg%3E");
@@ -53,7 +53,7 @@ body.page-landing{font-family:var(--font-read);background:var(--paper)}
 .cursor-glow{position:fixed;inset:0;pointer-events:none;z-index:1;
   background:radial-gradient(460px circle at var(--mx,50%) var(--my,16%), rgba(253,251,244,.62), rgba(253,251,244,0) 60%)}
 
-/* the current â€” a faint printed margin rule + a slow ink bead */
+/* the current — a faint printed margin rule + a slow ink bead */
 .wire{position:fixed;top:0;right:0;width:1px;height:100%;
   background:linear-gradient(to bottom,var(--spot) 0%,var(--spot-deep) 45%,rgba(27,24,19,.22) 80%,transparent 100%);
   opacity:.5;z-index:5;animation:inkBreath 6.5s ease-in-out infinite}
@@ -69,10 +69,16 @@ body.page-landing{font-family:var(--font-read);background:var(--paper)}
 .hero{padding:84px 0 60px}
 .hero .eyebrow,.hero p,.section-label,.card{opacity:0;animation:riseIn .8s cubic-bezier(.2,.7,.2,1) forwards}
 .hero .eyebrow{font-family:var(--font-mark);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--spot);margin-bottom:24px;animation-delay:.05s}
-/* main header â€” typewriter face; the script types it and rests the caret after the last word */
+/* main header — typewriter face; the script types it and rests the caret after the last word */
 .hero h1{font-family:var(--font-type);font-weight:400;font-size:clamp(40px,8.2vw,80px);line-height:1.1;letter-spacing:.004em;max-width:14ch;color:var(--ink);min-height:1.2em}
 .hero h1 em,.hero h1 .em{font-style:normal;color:var(--spot)}
-.hero h1 .caret{display:inline-block;color:var(--spot);font-weight:400;transform:translateY(-2px);animation:blink 1.05s steps(1) infinite}
+.hero h1 .caret{display:inline-block;width:0;height:.92em;border-right:.085em solid var(--spot);
+  vertical-align:-.12em;margin-left:.06em;animation:blink 1.05s steps(1) infinite}
+/* reader finishes the line — editable, ephemeral */
+.hero h1 .finish{outline:none;color:var(--ink);caret-color:var(--spot);white-space:pre-wrap;word-break:break-word}
+.hero h1 .finish:empty:not(:focus)::after{content:"";display:inline-block;width:0;height:.92em;
+  border-right:.085em solid var(--spot);vertical-align:-.12em;margin-left:.02em;
+  animation:blink 1.05s steps(1) infinite}
 .hero p{margin-top:24px;max-width:50ch;color:var(--ink-soft);font-size:clamp(15px,2.4vw,18px);line-height:1.65;animation-delay:.30s}
 .hero p+p{margin-top:14px}
 
