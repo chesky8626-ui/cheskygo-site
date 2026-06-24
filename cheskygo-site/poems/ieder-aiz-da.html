@@ -52,5 +52,18 @@
     </div>
     <div class="rfoot"><span>cheskygo · 2026</span><span>↯ current</span></div>
   </div>
+  <script>
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var root=document.documentElement;
+    var tx=innerWidth/2, ty=innerHeight*0.26, cx=tx, cy=ty, active=false;
+    addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;active=true;},{passive:true});
+    (function loop(){
+      cx+=(tx-cx)*0.12; cy+=(ty-cy)*0.12;
+      if(active){root.style.setProperty('--mx',cx+'px');root.style.setProperty('--my',cy+'px');}
+      requestAnimationFrame(loop);
+    })();
+  })();
+  </script>
 </body>
 </html>
