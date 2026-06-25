@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="yi" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My kids. My kids. · cheskygo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&family=Noto+Sans+Hebrew:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="page-poem">
+  <div class="rwrap">
+    <div class="rtop">
+      <a class="back" href="../index.html"><span class="ar">←</span> all poems</a>
+      <span class="bsd">בס״ד</span>
+    </div>
+    <div class="rplate"><img src="../assets/my-kids-my-kids.png" alt=""></div>
+    <header class="rhead">
+      <div class="rkicker"><span class="z">poem</span> &nbsp;·&nbsp; yiddish</div>
+      <h1 class="rtitle">My kids. My kids.</h1>
+      <div class="rtitle-rule"></div>
+    </header>
+    <div class="rpoem">
+      <div class="rstanza">
+        <span class="rline">He walks.</span>
+        <span class="rline">He waits.</span>
+        <span class="rline">Counts the gates.</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">He seeks.</span>
+        <span class="rline">He stays.</span>
+        <span class="rline">Circles the maze.</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">No word.</span>
+        <span class="rline">No sound.</span>
+        <span class="rline">Just shadows and ground.</span>
+        <span class="rline">He stops.</span>
+        <span class="rline">He turns.</span>
+        <span class="rline">No returns.</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">He scans.</span>
+        <span class="rline">He slows.</span>
+        <span class="rline">He names the rows.</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">My kids.</span>
+        <span class="rline">My light.</span>
+        <span class="rline">Out of sight.</span>
+        <span class="rline">He walks.</span>
+        <span class="rline">He waits.</span>
+        <span class="rline">He waits.</span>
+      </div>
+    </div>
+    <div class="rfoot"><span>cheskygo · 2026</span><span>↯ current</span></div>
+  </div>
+  <script>
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var root=document.documentElement;
+    var tx=innerWidth/2, ty=innerHeight*0.26, cx=tx, cy=ty, active=false;
+    addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;active=true;},{passive:true});
+    (function loop(){
+      cx+=(tx-cx)*0.12; cy+=(ty-cy)*0.12;
+      if(active){root.style.setProperty('--mx',cx+'px');root.style.setProperty('--my',cy+'px');}
+      requestAnimationFrame(loop);
+    })();
+  })();
+  </script>
+</body>
+</html>
