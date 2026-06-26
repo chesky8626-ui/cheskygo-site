@@ -189,25 +189,28 @@ body.page-poem .rtitle-rule,body.page-poem .rstanza{opacity:0;animation:riseIn .
    SEARCH  (floating button → expanding panel; both pages)
    ===================================================== */
 .search{position:fixed;z-index:60;font-family:var(--font-mark)}
-.search-toggle{width:46px;height:46px;border-radius:999px;border:1px solid var(--hair);
-  background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;
-  cursor:pointer;box-shadow:0 6px 18px rgba(27,24,19,.18);transition:transform .2s, background .2s}
-.search-toggle:hover{transform:translateY(-2px);background:var(--spot)}
+.search-toggle{width:48px;height:48px;border-radius:999px;border:1px solid rgba(27,24,19,.10);
+  background:var(--spot);color:#F4EFE5;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;box-shadow:0 8px 22px rgba(31,42,36,.28);transition:transform .2s, background .2s, box-shadow .2s}
+.search-toggle:hover{transform:translateY(-2px) scale(1.04);background:var(--spot-deep);box-shadow:0 12px 28px rgba(31,42,36,.34)}
 .search-toggle svg{width:18px;height:18px;display:block}
-.search-panel{position:absolute;top:0;left:0;display:none;flex-direction:column;gap:10px;
-  width:min(340px,calc(100vw - 36px));padding:12px;border:1px solid var(--hair);border-radius:14px;
-  background:var(--paper-3);box-shadow:0 14px 36px rgba(27,24,19,.16)}
-.search.open .search-panel{display:flex}
+.search-panel{position:fixed;left:14px;right:14px;top:14px;display:none;flex-direction:column;gap:12px;
+  padding:14px 16px;border:1px solid rgba(255,255,255,.5);border-radius:18px;
+  background:rgba(246,241,231,.66);backdrop-filter:blur(16px) saturate(1.15);-webkit-backdrop-filter:blur(16px) saturate(1.15);
+  box-shadow:0 18px 48px rgba(27,24,19,.18)}
+.search.open .search-panel{display:flex;animation:searchIn .3s cubic-bezier(.2,.75,.25,1)}
 .search.open .search-toggle{display:none}
+@keyframes searchIn{from{opacity:0;transform:translateY(-10px) scale(.985)}to{opacity:1;transform:none}}
 .search-row{display:flex;align-items:center;gap:8px}
-.search-input{flex:1;font-family:var(--font-poem);font-size:16px;color:var(--ink);
-  background:transparent;border:0;border-bottom:1px solid var(--hair);padding:6px 2px;outline:none}
+.search-input{flex:1;font-family:var(--font-poem);font-size:17px;color:var(--ink);
+  background:transparent;border:0;border-bottom:1px solid var(--hair);padding:8px 2px;outline:none}
 .search-input::placeholder{color:var(--dim)}
 .search-close{border:0;background:transparent;color:var(--dim);font-size:18px;line-height:1;cursor:pointer;padding:4px}
 .search-chips{display:flex;flex-wrap:wrap;gap:6px}
-.chip{font-family:var(--font-mark);font-size:11px;letter-spacing:.03em;color:var(--ink-soft);
-  background:var(--paper);border:1px solid var(--hair);border-radius:999px;padding:5px 10px;cursor:pointer;transition:.18s}
-.chip:hover{border-color:var(--spot)}
+.chip{font-family:var(--font-mark);font-size:11px;letter-spacing:.05em;color:var(--ink-soft);
+  background:rgba(27,24,19,.045);border:1px solid rgba(27,24,19,.12);border-radius:999px;
+  padding:6px 13px;cursor:pointer;transition:background .18s, border-color .18s, color .18s, transform .18s}
+.chip:hover{border-color:var(--spot);color:var(--ink);transform:translateY(-1px)}
 .chip.active{background:var(--spot);color:#fff;border-color:var(--spot)}
 .search-empty{font-family:var(--font-mark);font-size:11px;color:var(--dim);padding:2px}
 .card.hide{display:none}
