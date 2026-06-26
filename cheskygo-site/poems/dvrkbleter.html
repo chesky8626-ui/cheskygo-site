@@ -10,6 +10,15 @@
 <link rel="stylesheet" href="../style.css">
 </head>
 <body class="page-poem">
+  <div class="search" id="search">
+    <button class="search-toggle" aria-label="Search poems" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg></button>
+    <div class="search-panel">
+      <div class="search-row">
+        <input class="search-input" type="search" placeholder="search poems… ↵" aria-label="Search poems">
+        <button class="search-close" aria-label="Close search">×</button>
+      </div>
+    </div>
+  </div>
   <div class="rwrap">
     <div class="rtop">
       <a class="back" href="../index.html"><span class="ar">←</span> all poems</a>
@@ -136,5 +145,42 @@
     </div>
     <div class="rfoot"><span>cheskygo · 2026</span><span>↯ current</span></div>
   </div>
+  <script>
+  (function(){
+    var root=document.documentElement;
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var tx=innerWidth/2, ty=innerHeight*0.26, cx=tx, cy=ty, on=false;
+      addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;on=true;},{passive:true});
+      (function loop(){
+        cx+=(tx-cx)*0.12; cy+=(ty-cy)*0.12;
+        if(on){root.style.setProperty('--mx',cx+'px');root.style.setProperty('--my',cy+'px');}
+        requestAnimationFrame(loop);
+      })();
+    }
+    var s=document.getElementById('search'); if(!s) return;
+    var toggle=s.querySelector('.search-toggle'), panel=s.querySelector('.search-panel');
+    var input=s.querySelector('.search-input'), closeBtn=s.querySelector('.search-close');
+    var pad=18, rx=0, ry=0;
+    function place(){
+      var w=s.offsetWidth||46, h=s.offsetHeight||46;
+      rx=pad+Math.random()*Math.max(0,innerWidth-w-pad*2);
+      ry=pad+Math.random()*Math.max(0,innerHeight-h-pad*2);
+      s.style.left=rx+'px'; s.style.top=ry+'px';
+    }
+    place();
+    addEventListener('resize',function(){ if(!s.classList.contains('open')) place(); });
+    function go(){ var v=(input.value||'').trim(); location.href='../index.html'+(v?('?q='+encodeURIComponent(v)):''); }
+    toggle.addEventListener('click',function(){
+      s.classList.add('open'); toggle.setAttribute('aria-expanded','true');
+      var pw=panel.offsetWidth, ph=panel.offsetHeight;
+      s.style.left=Math.min(Math.max(pad,rx),innerWidth-pw-pad)+'px';
+      s.style.top=Math.min(Math.max(pad,ry),innerHeight-ph-pad)+'px';
+      setTimeout(function(){ input.focus(); },10);
+    });
+    closeBtn.addEventListener('click',function(){ s.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); s.style.left=rx+'px'; s.style.top=ry+'px'; });
+    input.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); go(); } });
+    addEventListener('keydown',function(e){ if(e.key==='Escape'&&s.classList.contains('open')) closeBtn.click(); });
+  })();
+  </script>
 </body>
 </html>
