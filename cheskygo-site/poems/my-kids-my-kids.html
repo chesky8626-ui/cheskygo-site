@@ -92,12 +92,11 @@
     function go(){ var v=(input.value||'').trim(); location.href='../index.html'+(v?('?q='+encodeURIComponent(v)):''); }
     toggle.addEventListener('click',function(){
       s.classList.add('open'); toggle.setAttribute('aria-expanded','true');
-      var pw=panel.offsetWidth, ph=panel.offsetHeight;
-      s.style.left=Math.min(Math.max(pad,rx),innerWidth-pw-pad)+'px';
-      s.style.top=Math.min(Math.max(pad,ry),innerHeight-ph-pad)+'px';
+      var ph=panel.offsetHeight;
+      panel.style.top=Math.min(Math.max(pad,ry),innerHeight-ph-pad)+'px';
       setTimeout(function(){ input.focus(); },10);
     });
-    closeBtn.addEventListener('click',function(){ s.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); s.style.left=rx+'px'; s.style.top=ry+'px'; });
+    closeBtn.addEventListener('click',function(){ s.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
     input.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); go(); } });
     addEventListener('keydown',function(e){ if(e.key==='Escape'&&s.classList.contains('open')) closeBtn.click(); });
   })();
