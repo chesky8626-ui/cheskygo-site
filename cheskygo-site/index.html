@@ -14,6 +14,17 @@
   <div class="wire" aria-hidden="true"></div>
   <div class="charge" aria-hidden="true"></div>
   <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="search" id="search">
+    <button class="search-toggle" aria-label="Search poems" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg></button>
+    <div class="search-panel">
+      <div class="search-row">
+        <input class="search-input" type="search" placeholder="search poems…" aria-label="Search poems">
+        <button class="search-close" aria-label="Close search">×</button>
+      </div>
+      <div class="search-chips"><button class="chip" data-token="שניי">#שניי</button><button class="chip" data-token="yiddish">yiddish</button><button class="chip" data-token="english">english</button><button class="chip" data-token="2026">2026</button><button class="chip" data-token="2025">2025</button><button class="chip" data-token="2022">2022</button><button class="chip" data-token="2021">2021</button><button class="chip" data-token="2020">2020</button><button class="chip" data-token="2019">2019</button></div>
+      <div class="search-empty" style="display:none">no poems match.</div>
+    </div>
+  </div>
   <div class="wrap">
     <nav class="topnav">
       <span class="logo">cheskygo</span>
@@ -26,7 +37,7 @@
     </section>
     <div class="section-label"><span class="z">↯ current</span><span>the poems</span><span class="rule"></span></div>
     <div class="cards">
-      <a class="card" href="poems/kemp.html">
+      <a class="card" href="poems/kemp.html" data-search="קעמפ קעמפ איז מוראדיג,  yiddish 2026">
         <div class="thumb"><img src="assets/kemp.png" alt=""></div>
         <div class="body">
           <div class="tag">most recent · yiddish</div>
@@ -34,7 +45,7 @@
           <div class="snip">קעמפ איז מוראדיג,…</div>
         </div>
       </a>
-      <a class="card" href="poems/a-griner.html">
+      <a class="card" href="poems/a-griner.html" data-search="א גרינער ווי א גרינער,  yiddish 2026">
         <div class="thumb"><img src="assets/a-griner.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -42,7 +53,7 @@
           <div class="snip">ווי א גרינער,…</div>
         </div>
       </a>
-      <a class="card" href="poems/a-shvviignder-brivv.html">
+      <a class="card" href="poems/a-shvviignder-brivv.html" data-search="א שווייגנדער בריוו מיינע אויגן זוכן די גרויע אספאלט.  yiddish 2026">
         <div class="thumb"><img src="assets/a-shvviignder-brivv.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -50,7 +61,7 @@
           <div class="snip">מיינע אויגן זוכן די גרויע אספאלט.…</div>
         </div>
       </a>
-      <a class="card" href="poems/drii-klingen.html">
+      <a class="card" href="poems/drii-klingen.html" data-search="דריי קלינגען א שטיקל פלאסטיק.  yiddish 2026">
         <div class="thumb"><img src="assets/drii-klingen.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -58,7 +69,7 @@
           <div class="snip">א שטיקל פלאסטיק.…</div>
         </div>
       </a>
-      <a class="card" href="poems/mir.html">
+      <a class="card" href="poems/mir.html" data-search="מיר איך זיץ נעבן מיר  yiddish 2026">
         <div class="thumb"><img src="assets/mir.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -66,7 +77,7 @@
           <div class="snip">איך זיץ נעבן מיר…</div>
         </div>
       </a>
-      <a class="card" href="poems/arvis-pvn-di-blvi.html">
+      <a class="card" href="poems/arvis-pvn-di-blvi.html" data-search="ארויס פון די בלוי א בלויע ים  yiddish 2026">
         <div class="thumb"><img src="assets/arvis-pvn-di-blvi.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -74,7 +85,7 @@
           <div class="snip">א בלויע ים…</div>
         </div>
       </a>
-      <a class="card" href="poems/ieder-aiz-da.html">
+      <a class="card" href="poems/ieder-aiz-da.html" data-search="יעדער איז דא דער איז דא  yiddish 2026">
         <div class="thumb"><img src="assets/ieder-aiz-da.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -82,7 +93,7 @@
           <div class="snip">דער איז דא…</div>
         </div>
       </a>
-      <a class="card" href="poems/hiint-da.html">
+      <a class="card" href="poems/hiint-da.html" data-search="היינט. דא. וואו גייעך  yiddish 2026">
         <div class="thumb"><img src="assets/hiint-da.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -90,7 +101,7 @@
           <div class="snip">וואו גייעך…</div>
         </div>
       </a>
-      <a class="card" href="poems/parbrente-breklek.html">
+      <a class="card" href="poems/parbrente-breklek.html" data-search="פארברענטע ברעקלעך שווארצע, פארברענטע פינטלעך.  yiddish 2026">
         <div class="thumb"><img src="assets/parbrente-breklek.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -98,7 +109,7 @@
           <div class="snip">שווארצע, פארברענטע פינטלעך.…</div>
         </div>
       </a>
-      <a class="card" href="poems/a-blinde-lektl.html">
+      <a class="card" href="poems/a-blinde-lektl.html" data-search="א בלינדע לעכטל נאך א שפאלט. נאך א פלעק.  yiddish 2026">
         <div class="thumb"><img src="assets/a-blinde-lektl.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -106,7 +117,7 @@
           <div class="snip">נאך א שפאלט. נאך א פלעק.…</div>
         </div>
       </a>
-      <a class="card" href="poems/blinde-saldatn.html">
+      <a class="card" href="poems/blinde-saldatn.html" data-search="בלינדע סאלדאטן קאלירן.  yiddish 2026">
         <div class="thumb"><img src="assets/blinde-saldatn.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -114,7 +125,7 @@
           <div class="snip">קאלירן.…</div>
         </div>
       </a>
-      <a class="card" href="poems/vviderkvl.html">
+      <a class="card" href="poems/vviderkvl.html" data-search="ווידערקול צווישן די טונקעלע שאטנס און ליכטיגע שיין  yiddish 2026">
         <div class="thumb"><img src="assets/vviderkvl.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -122,7 +133,7 @@
           <div class="snip">צווישן די טונקעלע שאטנס און ליכטיגע שיין…</div>
         </div>
       </a>
-      <a class="card" href="poems/parpir-nisht.html">
+      <a class="card" href="poems/parpir-nisht.html" data-search="פארפי״ר נישט די וועלט ארום מיר ווי א שטילע בילד.  yiddish 2026">
         <div class="thumb"><img src="assets/parpir-nisht.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -130,7 +141,7 @@
           <div class="snip">די וועלט ארום מיר ווי א שטילע בילד.…</div>
         </div>
       </a>
-      <a class="card" href="poems/alkahaliker.html">
+      <a class="card" href="poems/alkahaliker.html" data-search="אלקאהאלי-קער אויף א פלעק  yiddish 2026">
         <div class="thumb"><img src="assets/alkahaliker.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -138,15 +149,15 @@
           <div class="snip">אויף א פלעק…</div>
         </div>
       </a>
-      <a class="card" href="poems/vviise-natn.html">
+      <a class="card" href="poems/vviise-natn.html" data-search="ווייסע נאטן מיליאנען נאטן שניי yiddish 2026">
         <div class="thumb"><img src="assets/vviise-natn.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
           <div class="ptitle">ווייסע נאטן</div>
-          <div class="snip">#שניי…</div>
+          <div class="snip">מיליאנען נאטן…</div>
         </div>
       </a>
-      <a class="card" href="poems/rush-paspart.html">
+      <a class="card" href="poems/rush-paspart.html" data-search="rush פאספארט מיין נפש -  yiddish 2026">
         <div class="thumb"><img src="assets/rush-paspart.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -154,7 +165,7 @@
           <div class="snip">מיין נפש -…</div>
         </div>
       </a>
-      <a class="card" href="poems/arvistretn.html">
+      <a class="card" href="poems/arvistretn.html" data-search="א(ר)ויסטרעטן א נייע וועג  yiddish 2026">
         <div class="thumb"><img src="assets/arvistretn.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -162,7 +173,7 @@
           <div class="snip">א נייע וועג…</div>
         </div>
       </a>
-      <a class="card" href="poems/a-atemndiger-skelet.html">
+      <a class="card" href="poems/a-atemndiger-skelet.html" data-search="א אטעמנדיגער סקעלעט א שווארצער,  yiddish 2026">
         <div class="thumb"><img src="assets/a-atemndiger-skelet.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -170,7 +181,7 @@
           <div class="snip">א שווארצער,…</div>
         </div>
       </a>
-      <a class="card" href="poems/breklek-tmimvt.html">
+      <a class="card" href="poems/breklek-tmimvt.html" data-search="ברעקלעך תמימות ציכטיגע נשמות  yiddish 2026">
         <div class="thumb"><img src="assets/breklek-tmimvt.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -178,7 +189,7 @@
           <div class="snip">ציכטיגע נשמות…</div>
         </div>
       </a>
-      <a class="card" href="poems/avilige-trern.html">
+      <a class="card" href="poems/avilige-trern.html" data-search="אויליגע טרערן אין א ווינקעלע שטייט  yiddish 2025">
         <div class="thumb"><img src="assets/avilige-trern.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -186,7 +197,7 @@
           <div class="snip">אין א ווינקעלע שטייט…</div>
         </div>
       </a>
-      <a class="card" href="poems/btzati-lirvshlim.html">
+      <a class="card" href="poems/btzati-lirvshlim.html" data-search="בצאתי לירושלים ווייטאג, טראמא  yiddish 2025">
         <div class="thumb"><img src="assets/btzati-lirvshlim.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -194,7 +205,7 @@
           <div class="snip">ווייטאג, טראמא…</div>
         </div>
       </a>
-      <a class="card" href="poems/benkl.html">
+      <a class="card" href="poems/benkl.html" data-search="בענק׳ל א בענקל, אויבנאן  yiddish 2025">
         <div class="thumb"><img src="assets/benkl.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -202,7 +213,7 @@
           <div class="snip">א בענקל, אויבנאן…</div>
         </div>
       </a>
-      <a class="card" href="poems/my-kids-my-kids.html">
+      <a class="card" href="poems/my-kids-my-kids.html" data-search="my kids. my kids. he walks.  english 2025">
         <div class="thumb"><img src="assets/my-kids-my-kids.png" alt=""></div>
         <div class="body">
           <div class="tag">english</div>
@@ -210,7 +221,7 @@
           <div class="snip" style="direction:ltr;text-align:left">He walks.…</div>
         </div>
       </a>
-      <a class="card" href="poems/ainmitn.html">
+      <a class="card" href="poems/ainmitn.html" data-search="אינמיטן ס'איז דא 'אינדערמיטן' -  yiddish 2025">
         <div class="thumb"><img src="assets/ainmitn.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -218,7 +229,7 @@
           <div class="snip">ס'איז דא 'אינדערמיטן' -…</div>
         </div>
       </a>
-      <a class="card" href="poems/achvtz-mir.html">
+      <a class="card" href="poems/achvtz-mir.html" data-search="אחוץ מיר אין הימל א וואונד  yiddish 2025">
         <div class="thumb"><img src="assets/achvtz-mir.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -226,7 +237,7 @@
           <div class="snip">אין הימל א וואונד…</div>
         </div>
       </a>
-      <a class="card" href="poems/shlaplaze-mchshbvt.html">
+      <a class="card" href="poems/shlaplaze-mchshbvt.html" data-search="שלאפלאזע מחשבות א מלאכ׳יש געשטאלט, א פנימל פון כסא הכבוד  yiddish 2022">
         <div class="thumb"><img src="assets/shlaplaze-mchshbvt.jpg" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -234,7 +245,7 @@
           <div class="snip">א מלאכ׳יש געשטאלט, א פנימל פון כסא הכבוד…</div>
         </div>
       </a>
-      <a class="card" href="poems/aik-bin-gepaln-a-krbn.html">
+      <a class="card" href="poems/aik-bin-gepaln-a-krbn.html" data-search="איך בין געפאלן, א קרבן איך וויל  yiddish 2021">
         <div class="thumb"><img src="assets/aik-bin-gepaln-a-krbn.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -242,7 +253,7 @@
           <div class="snip">איך וויל…</div>
         </div>
       </a>
-      <a class="card" href="poems/dvrkbleter.html">
+      <a class="card" href="poems/dvrkbleter.html" data-search="דורכבלעטער א רעגנבויגן  yiddish 2020">
         <div class="thumb"><img src="assets/dvrkbleter.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -250,7 +261,7 @@
           <div class="snip">א רעגנבויגן…</div>
         </div>
       </a>
-      <a class="card" href="poems/grine-tzigl.html">
+      <a class="card" href="poems/grine-tzigl.html" data-search="גרינע ציגל ליידיגע טייסטער  yiddish 2020">
         <div class="thumb"><img src="assets/grine-tzigl.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -258,7 +269,7 @@
           <div class="snip">ליידיגע טייסטער…</div>
         </div>
       </a>
-      <a class="card" href="poems/vvas-ietzt.html">
+      <a class="card" href="poems/vvas-ietzt.html" data-search="וואס יעצט? קיין געפאסטע מונדירן  yiddish 2019">
         <div class="thumb"><img src="assets/vvas-ietzt.png" alt=""></div>
         <div class="body">
           <div class="tag">yiddish</div>
@@ -269,72 +280,125 @@
     </div>
     <footer class="lfoot"><span class="out">light's out :)</span><span>cheskygo · 2026</span></footer>
   </div>
+
   <script>
   (function(){
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     var glow = document.querySelector('.cursor-glow');
     if (glow && !reduce){
-      var tx=innerWidth/2, ty=innerHeight*0.12, cx=tx, cy=ty, active=false;
-      addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;active=true;},{passive:true});
+      var tx=innerWidth/2, ty=innerHeight*0.12, cx=tx, cy=ty, on=false;
+      addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;on=true;},{passive:true});
       (function loop(){
         cx+=(tx-cx)*0.12; cy+=(ty-cy)*0.12;
-        if(active){glow.style.setProperty('--mx',cx+'px');glow.style.setProperty('--my',cy+'px');}
+        if(on){glow.style.setProperty('--mx',cx+'px');glow.style.setProperty('--my',cy+'px');}
         requestAnimationFrame(loop);
       })();
     }
 
     var h1 = document.querySelector('.hero h1');
-    if (!h1) return;
+    if (h1){
+      var flat = [];
+      h1.childNodes.forEach(function(node){
+        var em = node.nodeType===1 && node.tagName==='EM', t = node.textContent;
+        for (var k=0;k<t.length;k++) flat.push({ch:t[k], em:em});
+      });
+      while (flat.length && /\s/.test(flat[flat.length-1].ch)) flat.pop();
+      if (flat.length && flat[flat.length-1].ch === '.') flat.pop();
+      [',',' ','a','n','d'].forEach(function(ch){ flat.push({ch:ch, em:false}); });
 
-    var flat = [];
-    h1.childNodes.forEach(function(node){
-      var em = node.nodeType===1 && node.tagName==='EM', t = node.textContent;
-      for (var k=0;k<t.length;k++) flat.push({ch:t[k], em:em});
+      var addFinish = function(){
+        h1.appendChild(document.createTextNode(' '));
+        var fin = document.createElement('span');
+        fin.className = 'finish';
+        fin.setAttribute('contenteditable','true');
+        fin.setAttribute('role','textbox');
+        fin.setAttribute('aria-label','finish the line');
+        fin.spellcheck = false;
+        h1.appendChild(fin);
+        h1.addEventListener('click', function(){ fin.focus(); });
+        fin.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); fin.blur(); } });
+        fin.addEventListener('paste', function(e){ e.preventDefault(); var t=(e.clipboardData||window.clipboardData).getData('text'); document.execCommand('insertText', false, t); });
+      };
+      var render = function(node){
+        var lastEm=null, span=null;
+        flat.forEach(function(c){
+          if(c.em!==lastEm || !span){ span=document.createElement('span'); if(c.em) span.className='em'; node.appendChild(span); lastEm=c.em; }
+          span.textContent+=c.ch;
+        });
+      };
+
+      if (reduce){ h1.innerHTML=''; render(h1); addFinish(); }
+      else {
+        h1.innerHTML='';
+        var i=0, lastEm=null, span=null;
+        var caret=document.createElement('span'); caret.className='caret';
+        h1.appendChild(caret);
+        (function step(){
+          if (i>=flat.length){ h1.removeChild(caret); addFinish(); return; }
+          var c=flat[i++];
+          if(c.em!==lastEm || !span){ span=document.createElement('span'); if(c.em) span.className='em'; h1.insertBefore(span, caret); lastEm=c.em; }
+          span.textContent+=c.ch;
+          setTimeout(step, c.ch===' ' ? 80 : (58+Math.random()*72));
+        })();
+      }
+    }
+
+    // ---- search: random-position floating button → live filter ----
+    var s=document.getElementById('search'); if(!s) return;
+    var toggle=s.querySelector('.search-toggle'), panel=s.querySelector('.search-panel');
+    var input=s.querySelector('.search-input'), closeBtn=s.querySelector('.search-close');
+    var chips=[].slice.call(s.querySelectorAll('.chip'));
+    var cards=[].slice.call(document.querySelectorAll('.card'));
+    var empty=s.querySelector('.search-empty');
+    var pad=18, rx=0, ry=0, active={};
+
+    function place(){
+      var w=s.offsetWidth||46, h=s.offsetHeight||46;
+      rx=pad+Math.random()*Math.max(0,innerWidth-w-pad*2);
+      ry=pad+Math.random()*Math.max(0,innerHeight-h-pad*2);
+      s.style.left=rx+'px'; s.style.top=ry+'px';
+    }
+    place();
+    addEventListener('resize',function(){ if(!s.classList.contains('open')) place(); });
+
+    function openIt(){
+      s.classList.add('open'); toggle.setAttribute('aria-expanded','true');
+      var pw=panel.offsetWidth, ph=panel.offsetHeight;
+      s.style.left=Math.min(Math.max(pad,rx),innerWidth-pw-pad)+'px';
+      s.style.top=Math.min(Math.max(pad,ry),innerHeight-ph-pad)+'px';
+      setTimeout(function(){ input.focus(); },10);
+    }
+    function closeIt(){ s.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); s.style.left=rx+'px'; s.style.top=ry+'px'; }
+    toggle.addEventListener('click',openIt);
+    closeBtn.addEventListener('click',closeIt);
+    addEventListener('keydown',function(e){ if(e.key==='Escape'&&s.classList.contains('open')) closeIt(); });
+
+    function apply(){
+      var q=(input.value||'').trim().toLowerCase();
+      var toks=Object.keys(active).filter(function(k){ return active[k]; });
+      var shown=0;
+      cards.forEach(function(card){
+        var hay=card.getAttribute('data-search')||'';
+        var ok=(!q||hay.indexOf(q)>=0) && toks.every(function(t){ return hay.indexOf(t)>=0; });
+        card.classList.toggle('hide',!ok);
+        if(ok) shown++;
+      });
+      if(empty) empty.style.display = shown ? 'none' : 'block';
+    }
+    input.addEventListener('input',apply);
+    chips.forEach(function(ch){
+      ch.addEventListener('click',function(){
+        var t=ch.getAttribute('data-token');
+        active[t]=!active[t];
+        ch.classList.toggle('active',!!active[t]);
+        apply();
+      });
     });
-    while (flat.length && /\s/.test(flat[flat.length-1].ch)) flat.pop();
-    if (flat.length && flat[flat.length-1].ch === '.') flat.pop();
-    [',',' ','a','n','d'].forEach(function(ch){ flat.push({ch:ch, em:false}); });
 
-    function addFinish(){
-      h1.appendChild(document.createTextNode(' '));
-      var fin = document.createElement('span');
-      fin.className = 'finish';
-      fin.setAttribute('contenteditable','true');
-      fin.setAttribute('role','textbox');
-      fin.setAttribute('aria-label','finish the line');
-      fin.spellcheck = false;
-      h1.appendChild(fin);
-      h1.addEventListener('click', function(){ fin.focus(); });
-      fin.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); fin.blur(); } });
-      fin.addEventListener('paste', function(e){
-        e.preventDefault();
-        var t=(e.clipboardData||window.clipboardData).getData('text');
-        document.execCommand('insertText', false, t);
-      });
-    }
-
-    function render(node){
-      var lastEm=null, span=null;
-      flat.forEach(function(c){
-        if(c.em!==lastEm || !span){ span=document.createElement('span'); if(c.em) span.className='em'; node.appendChild(span); lastEm=c.em; }
-        span.textContent+=c.ch;
-      });
-    }
-
-    if (reduce){ h1.innerHTML=''; render(h1); addFinish(); return; }
-
-    h1.innerHTML='';
-    var i=0, lastEm=null, span=null;
-    var caret=document.createElement('span'); caret.className='caret';
-    h1.appendChild(caret);
-    (function step(){
-      if (i>=flat.length){ h1.removeChild(caret); addFinish(); return; }
-      var c=flat[i++];
-      if(c.em!==lastEm || !span){ span=document.createElement('span'); if(c.em) span.className='em'; h1.insertBefore(span, caret); lastEm=c.em; }
-      span.textContent+=c.ch;
-      setTimeout(step, c.ch===' ' ? 80 : (58+Math.random()*72));
-    })();
+    // open with ?q= arriving from a poem page
+    var m=location.search.match(/[?&]q=([^&]*)/);
+    if(m){ input.value=decodeURIComponent(m[1].replace(/\+/g,' ')); openIt(); apply(); }
   })();
   </script>
 </body>
