@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desert life · cheskygo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&family=Noto+Sans+Hebrew:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="page-poem">
+  <div class="search" id="search">
+    <button class="search-toggle" aria-label="Search poems" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg></button>
+    <div class="search-panel">
+      <div class="search-row">
+        <input class="search-input" type="search" placeholder="search poems… ↵" aria-label="Search poems">
+        <button class="search-close" aria-label="Close search">×</button>
+      </div>
+    </div>
+  </div>
+  <div class="rwrap">
+    <div class="rtop">
+      <a class="back" href="../index.html"><span class="ar">←</span> all poems</a>
+      <span class="bsd">בס״ד</span>
+    </div>
+    <div class="rplate"><img src="../assets/desert-life.png" alt=""></div>
+    <header class="rhead">
+      <div class="rkicker" style="direction:ltr;text-align:left"><span class="z">poem</span> &nbsp;·&nbsp; english</div>
+      <h1 class="rtitle" style="direction:ltr;text-align:left">Desert life</h1>
+      <div class="rtitle-rule" style="float:left"></div>
+    </header>
+    <div class="rpoem" style="direction:ltr;text-align:left">
+      <div class="rstanza">
+        <span class="rline">I have desire</span>
+        <span class="rline">I'm on fire</span>
+        <span class="rline">I want…</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">But Hashem -</span>
+        <span class="rline">You don't,</span>
+        <span class="rline">And you tell me</span>
+        <span class="rline">My dear, no</span>
+        <span class="rline">Turn the fire off</span>
+        <span class="rline">Shake the desire off</span>
+        <span class="rline">I don't want you</span>
+        <span class="rline">And don't let you</span>
+        <span class="rline">do it.</span>
+        <span class="rline">Ok.</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">But Hashem -</span>
+        <span class="rline">How exactly?</span>
+        <span class="rline">How do I fight fires?</span>
+        <span class="rline">How do I switch desires?</span>
+        <span class="rline">How?</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">Water?</span>
+        <span class="rline">I don't have any.</span>
+        <span class="rline">I'm thirsty</span>
+        <span class="rline">Dehydrated</span>
+        <span class="rline">Almost burnt</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">Sand?</span>
+        <span class="rline">I don't have any.</span>
+        <span class="rline">Just rock</span>
+        <span class="rline">And stone</span>
+        <span class="rline">Too many</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">Wind?</span>
+        <span class="rline">I can't blow any.</span>
+        <span class="rline">I'm blown away</span>
+        <span class="rline">In tornadoes</span>
+        <span class="rline">Of confusion</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">Desert doesn't offer</span>
+        <span class="rline">deserts offer</span>
+        <span class="rline">Just heat</span>
+        <span class="rline">Rock and wind</span>
+        <span class="rline">And endless tears</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">Oh.</span>
+        <span class="rline">So I do have</span>
+        <span class="rline">something</span>
+        <span class="rline">A little something</span>
+        <span class="rline">I can cry</span>
+        <span class="rline">A drop</span>
+        <span class="rline">Maybe two</span>
+        <span class="rline">But Hashem -</span>
+        <span class="rline">Can you</span>
+        <span class="rline">Cry too?</span>
+      </div>
+    </div>
+    <div class="rtags"><a href="../index.html?q=life">#life</a></div>
+    <div class="rfoot"><span>cheskygo · 2026</span><span>↯ current</span></div>
+  </div>
+  <script>
+  (function(){
+    var root=document.documentElement;
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var tx=innerWidth/2, ty=innerHeight*0.26, cx=tx, cy=ty, on=false;
+      addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;on=true;},{passive:true});
+      (function loop(){
+        cx+=(tx-cx)*0.12; cy+=(ty-cy)*0.12;
+        if(on){root.style.setProperty('--mx',cx+'px');root.style.setProperty('--my',cy+'px');}
+        requestAnimationFrame(loop);
+      })();
+    }
+    var s=document.getElementById('search'); if(!s) return;
+    var toggle=s.querySelector('.search-toggle'), panel=s.querySelector('.search-panel');
+    var input=s.querySelector('.search-input'), closeBtn=s.querySelector('.search-close');
+    var pad=18, rx=0, ry=0;
+    function place(){
+      var w=s.offsetWidth||48, h=s.offsetHeight||48;
+      var band=Math.min(64, innerWidth*0.06);
+      if(Math.random()<0.5) rx=pad+Math.random()*band;
+      else rx=innerWidth-w-pad-Math.random()*band;
+      ry=pad+Math.random()*Math.max(0,innerHeight-h-pad*2);
+      s.style.left=rx+'px'; s.style.top=ry+'px';
+    }
+    place();
+    addEventListener('resize',function(){ if(!s.classList.contains('open')) place(); });
+    function go(){ var v=(input.value||'').trim(); location.href='../index.html'+(v?('?q='+encodeURIComponent(v)):''); }
+    toggle.addEventListener('click',function(){
+      s.classList.add('open'); toggle.setAttribute('aria-expanded','true');
+      var pw=panel.offsetWidth, ph=panel.offsetHeight;
+      s.style.left=Math.min(Math.max(pad,rx),innerWidth-pw-pad)+'px';
+      s.style.top=Math.min(Math.max(pad,ry),innerHeight-ph-pad)+'px';
+      setTimeout(function(){ input.focus(); },10);
+    });
+    closeBtn.addEventListener('click',function(){ s.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); s.style.left=rx+'px'; s.style.top=ry+'px'; });
+    document.addEventListener('click',function(e){ if(s.classList.contains('open') && !s.contains(e.target)){ s.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); s.style.left=rx+'px'; s.style.top=ry+'px'; } });
+    addEventListener('keydown',function(e){ if(e.key==='Escape'&&s.classList.contains('open')) closeBtn.click(); });
+  })();
+  </script>
+</body>
+</html>
