@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Self Driving · cheskygo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&family=Noto+Sans+Hebrew:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="page-poem">
+  <div class="search" id="search">
+    <button class="search-toggle" aria-label="Search poems" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg></button>
+    <div class="search-panel">
+      <div class="search-row">
+        <input class="search-input" type="search" placeholder="search poems… ↵" aria-label="Search poems">
+        <button class="search-close" aria-label="Close search">×</button>
+      </div>
+    </div>
+  </div>
+  <div class="rwrap">
+    <div class="rtop">
+      <a class="back" href="../index.html"><span class="ar">←</span> all poems</a>
+      <span class="bsd">בס״ד</span>
+    </div>
+    <div class="rplate"><img src="../assets/self-driving.jpg" alt=""></div>
+    <header class="rhead">
+      <div class="rkicker" style="direction:ltr;text-align:left"><span class="z">poem</span> &nbsp;·&nbsp; english</div>
+      <h1 class="rtitle" style="direction:ltr;text-align:left">Self Driving</h1>
+      <div class="rtitle-rule" style="float:left"></div>
+    </header>
+    <div class="rpoem" style="direction:ltr;text-align:left">
+      <div class="rstanza">
+        <span class="rline">Is it heading my way</span>
+        <span class="rline">or a way through my head</span>
+        <span class="rline">Is it leading the way</span>
+        <span class="rline">or way too much instead</span>
+        <span class="rline">Is it self driving</span>
+        <span class="rline">or driving myself</span>
+        <span class="rline">Is it doing my math</span>
+        <span class="rline">to keep me in-lane</span>
+        <span class="rline">Or changing path</span>
+        <span class="rline">to keep my brain in chains</span>
+        <span class="rline">Can I completely</span>
+        <span class="rline">enjoy my ride</span>
+        <span class="rline">Or is it taking me</span>
+        <span class="rline">on a ride</span>
+        <span class="rline">Does it have Adaptive-cruise</span>
+        <span class="rline">an intelligent kind</span>
+        <span class="rline">Or adopting snooze</span>
+        <span class="rline">as a piece of mind</span>
+        <span class="rline">Is it driving me</span>
+        <span class="rline">left and right</span>
+        <span class="rline">Or taking gradually</span>
+        <span class="rline">away my rights</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">By far,</span>
+        <span class="rline">Who is</span>
+        <span class="rline">Driving my car?</span>
+      </div>
+    </div>
+    <div class="rtags"><a href="../index.html?q=life">#life</a><a href="../index.html?q=tech">#tech</a></div>
+    <div class="rfoot"><span>cheskygo · 2026</span><span>↯ current</span></div>
+  </div>
+  <script>
+  (function(){
+    var root=document.documentElement;
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var tx=innerWidth/2, ty=innerHeight*0.26, cx=tx, cy=ty, on=false;
+      addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;on=true;},{passive:true});
+      (function loop(){
+        cx+=(tx-cx)*0.12; cy+=(ty-cy)*0.12;
+        if(on){root.style.setProperty('--mx',cx+'px');root.style.setProperty('--my',cy+'px');}
+        requestAnimationFrame(loop);
+      })();
+    }
+    var s=document.getElementById('search'); if(!s) return;
+    var toggle=s.querySelector('.search-toggle'), panel=s.querySelector('.search-panel');
+    var input=s.querySelector('.search-input'), closeBtn=s.querySelector('.search-close');
+    var pad=18, rx=0, ry=0;
+    function place(){
+      var w=s.offsetWidth||48, h=s.offsetHeight||48;
+      var band=Math.min(64, innerWidth*0.06);
+      if(Math.random()<0.5) rx=pad+Math.random()*band;
+      else rx=innerWidth-w-pad-Math.random()*band;
+      ry=pad+Math.random()*Math.max(0,innerHeight-h-pad*2);
+      s.style.left=rx+'px'; s.style.top=ry+'px';
+    }
+    place();
+    addEventListener('resize',function(){ if(!s.classList.contains('open')) place(); });
+    function go(){ var v=(input.value||'').trim(); location.href='../index.html'+(v?('?q='+encodeURIComponent(v)):''); }
+    toggle.addEventListener('click',function(){
+      s.classList.add('open'); toggle.setAttribute('aria-expanded','true');
+      var pw=panel.offsetWidth, ph=panel.offsetHeight;
+      s.style.left=Math.min(Math.max(pad,rx),innerWidth-pw-pad)+'px';
+      s.style.top=Math.min(Math.max(pad,ry),innerHeight-ph-pad)+'px';
+      setTimeout(function(){ input.focus(); },10);
+    });
+    closeBtn.addEventListener('click',function(){ s.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); s.style.left=rx+'px'; s.style.top=ry+'px'; });
+    document.addEventListener('click',function(e){ if(s.classList.contains('open') && !s.contains(e.target)){ s.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); s.style.left=rx+'px'; s.style.top=ry+'px'; } });
+    addEventListener('keydown',function(e){ if(e.key==='Escape'&&s.classList.contains('open')) closeBtn.click(); });
+  })();
+  </script>
+</body>
+</html>
