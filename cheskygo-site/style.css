@@ -141,7 +141,7 @@ body.page-poem::after{content:"";position:fixed;inset:0;pointer-events:none;z-in
 
 /* poem entrance plays on page load */
 body.page-poem .rplate,body.page-poem .rkicker,body.page-poem .rtitle,
-body.page-poem .rtitle-rule,body.page-poem .rstanza{opacity:0;animation:riseIn .75s cubic-bezier(.2,.7,.2,1) forwards}
+body.page-poem .rtitle-rule,body.page-poem .rstanza,body.page-poem .rfig{opacity:0;animation:riseIn .75s cubic-bezier(.2,.7,.2,1) forwards}
 
 .rplate{margin-top:28px;aspect-ratio:16/9;border-radius:2px;position:relative;overflow:hidden;border:1px solid var(--hair);
   background:radial-gradient(85% 130% at 80% 8%, rgba(244,228,215,.45), transparent 60%),
@@ -163,14 +163,32 @@ body.page-poem .rtitle-rule,body.page-poem .rstanza{opacity:0;animation:riseIn .
 .rpoem{clear:both;direction:rtl;text-align:right;padding:44px 0 10px;font-weight:400;
   font-size:clamp(20px,5.2vw,24px);line-height:1.85;color:#201D19}
 .rstanza{margin-bottom:1.5em}
-.rstanza:nth-child(1){animation-delay:.36s}.rstanza:nth-child(2){animation-delay:.44s}
-.rstanza:nth-child(3){animation-delay:.52s}.rstanza:nth-child(4){animation-delay:.60s}
-.rstanza:nth-child(5){animation-delay:.68s}.rstanza:nth-child(6){animation-delay:.76s}
-.rstanza:nth-child(7){animation-delay:.84s}.rstanza:nth-child(8){animation-delay:.92s}
-.rstanza:nth-child(9){animation-delay:1.0s}.rstanza:nth-child(10){animation-delay:1.08s}
+/* nth-of-type, not nth-child: figures sit between stanzas and must not
+   shift the stanza sequence. Stanzas are <div>, figures are <figure>. */
+.rstanza:nth-of-type(1){animation-delay:.36s}.rstanza:nth-of-type(2){animation-delay:.44s}
+.rstanza:nth-of-type(3){animation-delay:.52s}.rstanza:nth-of-type(4){animation-delay:.60s}
+.rstanza:nth-of-type(5){animation-delay:.68s}.rstanza:nth-of-type(6){animation-delay:.76s}
+.rstanza:nth-of-type(7){animation-delay:.84s}.rstanza:nth-of-type(8){animation-delay:.92s}
+.rstanza:nth-of-type(9){animation-delay:1.0s}.rstanza:nth-of-type(10){animation-delay:1.08s}
 .rline{display:block}
 /* the volta turns in the deep second ink */
 .rstanza.volta{color:var(--spot-deep)}
+
+/* ---- inline poem images ------------------------------------
+   Same plate treatment as the header (hairline, halftone screen),
+   but natural proportions — a poem's picture doesn't get cropped.
+   ------------------------------------------------------------ */
+.rfig{position:relative;margin:2.1em 0;border:1px solid var(--hair);border-radius:2px;overflow:hidden;
+  background:linear-gradient(135deg,var(--paper-3) 0%, var(--paper-2) 60%, var(--paper-3) 100%)}
+.rfig img{display:block;width:100%;height:auto}
+.rfig::after{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.16;
+  background-image:radial-gradient(rgba(27,24,19,.6) .5px,transparent .6px);background-size:3px 3px}
+/* interleaved with the stanza delays above (.40 sits between .36 and .44) */
+.rfig:nth-of-type(1){animation-delay:.40s}.rfig:nth-of-type(2){animation-delay:.48s}
+.rfig:nth-of-type(3){animation-delay:.56s}.rfig:nth-of-type(4){animation-delay:.64s}
+.rfig:nth-of-type(5){animation-delay:.72s}.rfig:nth-of-type(6){animation-delay:.80s}
+.rfig:nth-of-type(7){animation-delay:.88s}.rfig:nth-of-type(8){animation-delay:.96s}
+.rfig:nth-of-type(9){animation-delay:1.04s}.rfig:nth-of-type(10){animation-delay:1.12s}
 
 .rfoot{direction:ltr;margin-top:56px;padding:24px 0 70px;border-top:1px solid var(--hair);
   display:flex;justify-content:space-between;font-family:var(--font-mark);font-size:12px;color:var(--dim)}
