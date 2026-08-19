@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="yi" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled document · cheskygo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&family=Noto+Sans+Hebrew:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="page-poem">
+  <div class="search" id="search">
+    <button class="search-toggle" aria-label="Search poems" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg></button>
+    <div class="search-panel">
+      <div class="search-row">
+        <input class="search-input" type="search" placeholder="search poems… ↵" aria-label="Search poems">
+        <button class="search-close" aria-label="Close search">×</button>
+      </div>
+    </div>
+  </div>
+  <div class="rwrap">
+    <div class="rtop">
+      <a class="back" href="../index.html"><span class="ar">←</span> all poems</a>
+      <span class="bsd">בס״ד</span>
+    </div>
+    <div class="rplate"><img src="../assets/untitled-document/1.jpg" alt="" decoding="async" width="624" height="349"></div>
+    <header class="rhead">
+      <div class="rkicker"><span class="z">poem</span> &nbsp;·&nbsp; yiddish</div>
+      <h1 class="rtitle">Untitled document</h1>
+      <div class="rtitle-rule"></div>
+    </header>
+    <div class="rpoem">
+      <div class="rstanza">
+        <span class="rline">רויטע דעכעלעך</span>
+        <span class="rline">רויטע בלומעלעך</span>
+        <span class="rline">רויטע ציגל</span>
+        <span class="rline">רויטע פלעקעלעך</span>
+        <span class="rline">פון שווארצע היסטאריע.</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">אלטע פענסטערליך</span>
+        <span class="rline">קרומע געסעלעך</span>
+        <span class="rline">שטיינערנע ווענט</span>
+        <span class="rline">מיט פארמאכטע מיילער.</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">איבער די שטיינדעלעך</span>
+        <span class="rline">לויפן הונטעלעך</span>
+        <span class="rline">וואו אמאל</span>
+        <span class="rline">געלאפן זענען</span>
+        <span class="rline">קינדערליך.</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">רויטע קרוינדעלעך</span>
+        <span class="rline">ווייסע הינדעלעך</span>
+        <span class="rline">קראצן שטיינדעלעך,</span>
+        <span class="rline">זוכן קינדערלעך</span>
+        <span class="rline">וואס פלעגן אמאל</span>
+        <span class="rline">נאכלויפן זיי.</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">צווישן שטיין</span>
+        <span class="rline">און שטיין</span>
+        <span class="rline">איז נאך דא</span>
+        <span class="rline">איין</span>
+        <span class="rline">אנדערע רויט.</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">א פלעקעלע</span>
+        <span class="rline">וואס רעגן</span>
+        <span class="rline">האט שוין לאנג אפגעוואשן,</span>
+      </div>
+      <div class="rstanza">
+        <span class="rline">און די ערד</span>
+        <span class="rline">- האפענטליך</span>
+        <span class="rline">נאך אלץ</span>
+        <span class="rline">געדענקט…</span>
+      </div>
+    </div>
+    <div class="rtags"><a href="../index.html?q=%D7%A9%D7%95%D7%90%D7%94">#שואה</a></div>
+    <div class="rfoot"><span>cheskygo · 2026</span><span>↯ current</span></div>
+  </div>
+  <script>
+  (function(){
+    var root=document.documentElement;
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var tx=innerWidth/2, ty=innerHeight*0.26, cx=tx, cy=ty, on=false;
+      addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;on=true;},{passive:true});
+      (function loop(){
+        cx+=(tx-cx)*0.12; cy+=(ty-cy)*0.12;
+        if(on){root.style.setProperty('--mx',cx+'px');root.style.setProperty('--my',cy+'px');}
+        requestAnimationFrame(loop);
+      })();
+    }
+    var s=document.getElementById('search'); if(!s) return;
+    var toggle=s.querySelector('.search-toggle'), panel=s.querySelector('.search-panel');
+    var input=s.querySelector('.search-input'), closeBtn=s.querySelector('.search-close');
+    var pad=18, rx=0, ry=0;
+    function place(){
+      var w=s.offsetWidth||48, h=s.offsetHeight||48;
+      var band=Math.min(64, innerWidth*0.06);
+      if(Math.random()<0.5) rx=pad+Math.random()*band;
+      else rx=innerWidth-w-pad-Math.random()*band;
+      ry=pad+Math.random()*Math.max(0,innerHeight-h-pad*2);
+      s.style.left=rx+'px'; s.style.top=ry+'px';
+    }
+    place();
+    addEventListener('resize',function(){ if(!s.classList.contains('open')) place(); });
+    function go(){ var v=(input.value||'').trim(); location.href='../index.html'+(v?('?q='+encodeURIComponent(v)):''); }
+    toggle.addEventListener('click',function(){
+      s.classList.add('open'); toggle.setAttribute('aria-expanded','true');
+      var pw=panel.offsetWidth, ph=panel.offsetHeight;
+      s.style.left=Math.min(Math.max(pad,rx),innerWidth-pw-pad)+'px';
+      s.style.top=Math.min(Math.max(pad,ry),innerHeight-ph-pad)+'px';
+      setTimeout(function(){ input.focus(); },10);
+    });
+    closeBtn.addEventListener('click',function(){ s.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); s.style.left=rx+'px'; s.style.top=ry+'px'; });
+    document.addEventListener('click',function(e){ if(s.classList.contains('open') && !s.contains(e.target)){ s.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); s.style.left=rx+'px'; s.style.top=ry+'px'; } });
+    addEventListener('keydown',function(e){ if(e.key==='Escape'&&s.classList.contains('open')) closeBtn.click(); });
+  })();
+  </script>
+</body>
+</html>
